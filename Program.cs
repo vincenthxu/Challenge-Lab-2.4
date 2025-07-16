@@ -42,6 +42,7 @@
                 return (double)TotalMarks / 3;
             }
         }
+        // Division classifications obtained from https://aonecollege.co.in/course-offered/classification-of-divisions
         public string Division
         {
             get
