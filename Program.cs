@@ -7,7 +7,7 @@
             Student student = new();
 
             Console.Write("Input the Roll Number of the Student: ");
-            student.RollNo = Convert.ToInt32(Console.ReadLine());
+            student.StudentID = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Input the Name of the Student: ");
             student.Name = Console.ReadLine();
@@ -20,10 +20,9 @@
             Console.WriteLine(student.ToString());
         }
     }
-
     public class Student
     {
-        public int RollNo { get; set; }
+        public int StudentID { get; set; }
         public string? Name { get; set; }
         public int PhysicsMarks { get; set; }
         public int ChemistryMarks { get; set; }
@@ -42,25 +41,26 @@
                 return (double)TotalMarks / 3;
             }
         }
-        // Division classifications obtained from https://aonecollege.co.in/course-offered/classification-of-divisions
         public string Division
         {
             get
             {
                 switch (Average)
                 {
-                    case >= 60:
+                    case >= 90:
                         return "First";
-                    case >= 50 and < 60:
+                    case >= 80:
                         return "Second";
-                    default:
+                    case >= 70:
                         return "Third";
+                    default:
+                        return "Fourth";
                 }
             }
         }
         public override string ToString()
         {
-            return $"Roll No: {RollNo}\n" +
+            return $"Roll No: {StudentID}\n" +
                 $"Name of Student: {Name}\n" +
                 $"Marks in Physics: {PhysicsMarks}\n" +
                 $"Marks in Chemistry: {ChemistryMarks}\n" +
